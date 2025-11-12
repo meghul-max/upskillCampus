@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoParts - Profile</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1e1e1e, #2b2b2b);
+      color: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand h2 {
+      color: #ffcc00;
+      letter-spacing: 1px;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: 0.3s;
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+    header a:hover {
+      background-color: #ffcc00;
+      color: #111;
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px 35px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+    h3 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+    .details {
+      text-align: left;
+      margin-top: 10px;
+    }
+    .details p {
+      font-size: 15px;
+      margin: 8px 0;
+      color: #ddd;
+    }
+    .details strong {
+      color: #ffcc00;
+    }
+    .btn {
+      background: #ffcc00;
+      border: none;
+      padding: 12px 0;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .btn:hover {
+      background: #ffd633;
+      transform: scale(1.05);
+    }
+    .logout-btn {
+      background: #dc3545;
+      color: #fff;
+    }
+    .logout-btn:hover {
+      background: #b52a37;
+      transform: scale(1.05);
+    }
+    .footer {
+      background: #111;
+      text-align: center;
+      padding: 12px 0;
+      color: #bbb;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+      }
+      .card {
+        padding: 35px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><h2>AutoParts Store</h2></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h3>Your Profile</h3>
+      <div class="details" id="profile-details">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> johndoe@example.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+      </div>
+      <button class="btn" onclick="viewOrders()">View Orders</button>
+      <button class="btn logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="footer">© 2025 AutoParts Store — Drive with Confidence</div>
+
+  <script>
+    function viewOrders() {
+      alert("Redirecting to your orders...");
+      window.location.href = "orders.html";
+    }
+    function logout() {
+      alert("Logged out successfully!");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

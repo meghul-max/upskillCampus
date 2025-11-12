@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoParts - Orders</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1e1e1e, #2b2b2b);
+      color: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand h2 {
+      color: #ffcc00;
+      letter-spacing: 1px;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: 0.3s;
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+    header a:hover {
+      background-color: #ffcc00;
+      color: #111;
+    }
+    .container {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px 35px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 700px;
+      animation: fadeIn 1.2s ease;
+    }
+    h3 {
+      color: #ffcc00;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .order {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .order:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.02);
+    }
+    .order p {
+      margin: 5px 0;
+      color: #ddd;
+      font-size: 15px;
+    }
+    .order strong {
+      color: #ffcc00;
+    }
+    .btn {
+      background: #ffcc00;
+      border: none;
+      padding: 12px 0;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .btn:hover {
+      background: #ffd633;
+      transform: scale(1.05);
+    }
+    .footer {
+      background: #111;
+      text-align: center;
+      padding: 12px 0;
+      color: #bbb;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+      }
+      .card {
+        padding: 35px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><h2>AutoParts Store</h2></div>
+    <div><a href="index.html">Home</a></div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h3>Order History</h3>
+      <div id="orders-list">
+        <div class="order">
+          <p><strong>Order ID:</strong> #ORD-10245</p>
+          <p><strong>Date:</strong> 8 Nov 2025</p>
+          <p><strong>Items:</strong> Brake Pads, Engine Oil</p>
+          <p><strong>Status:</strong> Shipped</p>
+        </div>
+
+        <div class="order">
+          <p><strong>Order ID:</strong> #ORD-10192</p>
+          <p><strong>Date:</strong> 25 Oct 2025</p>
+          <p><strong>Items:</strong> Battery, Wiper Blades</p>
+          <p><strong>Status:</strong> Delivered</p>
+        </div>
+      </div>
+      <button class="btn" onclick="goBack()">Back to Profile</button>
+    </div>
+  </div>
+
+  <div class="footer">© 2025 AutoParts Store — Drive with Confidence</div>
+
+  <script>
+    function goBack() {
+      window.location.href = "profile.html";
+    }
+  </script>
+</body>
+</html>

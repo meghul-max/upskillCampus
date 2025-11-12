@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Products - AutoParts Store</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: linear-gradient(to right, #1e1e1e, #2b2b2b);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: #111;
+  color: #fff;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+header a {
+  color: #ffb84d;
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+header a:hover {
+  color: #fff;
+}
+.brand h2 {
+  color: #ffcc66;
+  letter-spacing: 1px;
+}
+.container {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1250px;
+  margin: auto;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.search, select {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 15px;
+}
+.search::placeholder {
+  color: #ccc;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.product {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 23%;
+  min-width: 260px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.8s ease-in-out;
+}
+.product:hover {
+  transform: translateY(-7px);
+  background: rgba(255, 255, 255, 0.15);
+}
+.product img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+.product img:hover {
+  transform: scale(1.05);
+}
+.product h4 {
+  color: #ffd966;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+.product p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+.price {
+  color: #ffb84d;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.btn {
+  background: linear-gradient(90deg, #ffb84d, #ff9966);
+  border: none;
+  padding: 10px 16px;
+  color: #111;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #ffd480, #ffb366);
+  transform: scale(1.05);
+}
+.footer {
+  background: #111;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  color: #bbb;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 992px) {
+  .product {
+    width: 45%;
+  }
+}
+@media (max-width: 600px) {
+  .product {
+    width: 100%;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="brand"><h2>AutoParts Store</h2></div>
+  <div>
+    <a id="auth-link" href="login.html">Login</a>
+    <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="controls">
+    <input id="search" class="search" placeholder="Search products...">
+    <select id="filter-category">
+      <option value="">All Categories</option>
+      <option value="engine">Engine Parts</option>
+      <option value="tyres">Tyres</option>
+      <option value="accessories">Accessories</option>
+      <option value="tools">Tools</option>
+      <option value="electronics">Electronics</option>
+    </select>
+  </div>
+
+  <div id="product-list" class="products">
+    <div class="product">
+      <img src="https://via.placeholder.com/200x150?text=Engine+Oil">
+      <h4>Car Engine Oil</h4>
+      <p>High performance synthetic oil.</p>
+      <div class="price">$45</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/200x150?text=Brake+Pads">
+      <h4>Brake Pad Set</h4>
+      <p>Durable and reliable brake system.</p>
+      <div class="price">$60</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/200x150?text=Tyres">
+      <h4>All-Weather Tyres</h4>
+      <p>Superior grip and long-lasting rubber.</p>
+      <div class="price">$80</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/200x150?text=Car+Battery">
+      <h4>Car Battery</h4>
+      <p>Long life and high cold-cranking power.</p>
+      <div class="price">$95</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/200x150?text=Wiper+Blades">
+      <h4>Wiper Blades</h4>
+      <p>All-season streak-free performance.</p>
+      <div class="price">$25</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/200x150?text=Air+Filter">
+      <h4>Air Filter</h4>
+      <p>Improves engine efficiency and airflow.</p>
+      <div class="price">$20</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/200x150?text=Seat+Covers">
+      <h4>Leather Seat Covers</h4>
+      <p>Comfortable and elegant car interiors.</p>
+      <div class="price">$120</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/200x150?text=GPS+Tracker">
+      <h4>GPS Tracker</h4>
+      <p>Real-time location monitoring for safety.</p>
+      <div class="price">$65</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">© 2025 AutoParts Store — Drive with Confidence</div>
+</body>
+</html>

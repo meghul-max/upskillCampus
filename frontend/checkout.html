@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout - AutoParts Store</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: linear-gradient(to right, #1e1e1e, #2b2b2b);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: #111;
+  color: #fff;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+header a {
+  color: #ffb84d;
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+header a:hover {
+  color: #fff;
+}
+.brand h2 {
+  color: #ffcc66;
+  letter-spacing: 1px;
+}
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  animation: fadeIn 1s ease-in-out;
+}
+.card h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ffd966;
+}
+form label {
+  font-size: 14px;
+  color: #ddd;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+input:focus {
+  background: rgba(255,255,255,0.3);
+}
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+.col {
+  flex: 1;
+}
+.btn {
+  background: linear-gradient(90deg, #ffb84d, #ff9966);
+  border: none;
+  padding: 12px 20px;
+  color: #111;
+  font-weight: 600;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #ffd480, #ffb366);
+  transform: scale(1.03);
+}
+.footer {
+  background: #111;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  color: #bbb;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="brand"><h2>AutoParts Store</h2></div>
+  <div><a href="index.html">Home</a> <a id="auth-link" href="login.html">Login</a></div>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h3>Shipping & Payment (Simulated)</h3>
+    <form id="checkout-form">
+      <div class="form-row">
+        <div class="col">
+          <label>Full name</label>
+          <input id="ship-name" required>
+        </div>
+        <div class="col">
+          <label>Phone</label>
+          <input id="ship-phone" required>
+        </div>
+      </div>
+
+      <label>Address</label>
+      <input id="ship-address" required>
+
+      <div class="form-row">
+        <div class="col">
+          <label>City</label>
+          <input id="ship-city" required>
+        </div>
+        <div class="col">
+          <label>Postal</label>
+          <input id="ship-post">
+        </div>
+      </div>
+
+      <h4 style="margin-top:12px;color:#ffd966;">Payment (demo)</h4>
+      <div class="form-row">
+        <div class="col">
+          <label>Card Number</label>
+          <input id="card-no" placeholder="4111 1111 1111 1111" required>
+        </div>
+        <div class="col">
+          <label>Expiry (MM/YY)</label>
+          <input id="card-exp" required>
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Place Order</button>
+    </form>
+  </div>
+</div>
+
+<div class="footer">© 2025 AutoParts Store</div>
+<script src="script.js"></script>
+</body>
+</html>
